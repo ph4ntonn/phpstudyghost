@@ -37,4 +37,3 @@ if __name__ == '__main__':
     tasks = [gevent.spawn(check, url) for url in file_read()]
     print("正在执行...请等候")
     gevent.joinall(tasks)
-    wait = input("执行完毕 任意键退出...")
